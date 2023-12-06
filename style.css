@@ -1,0 +1,126 @@
+body {
+    background-color: rgb(8, 49, 8);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 50%;
+    /* aspect-ratio: 1/1; */
+    padding: 2em;
+    width: 50%;
+    height: 50%;
+    border: none;
+    /* box-shadow: inset; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+
+/* Style for play and pause icons */
+/* .fa-play,
+.fa-pause {
+    font-size: 20px;
+    color: purple; 
+    display: none; 
+    margin-left: -0.5em;
+} */
+
+/* Styling when the button is in the paused state */
+/* .paused .fa-play {
+    display: block;
+}
+
+.paused .fa-pause {
+    display: none;
+} */
+
+/* Add these lines to the CSS to initially hide the pause icon */
+/* #pauseIcon {
+    display: none;
+} */
+
+
+
+/* .play-icon {
+    font-size: 20px;
+    color: purple;
+    display: block; 
+    margin-left: -0.5em;
+}
+
+.pause-icon {
+    font-size: 20px;
+    color: purple;
+    display: none; 
+    margin-left: -0.5em;
+} */
+
+/* Your existing CSS styles */
+/* ... */
+
+.play-icon {
+    font-size: 20px;
+    color: purple;
+    display: none; /* Initially hide all play icons */
+    margin-left: -0.5em;
+}
+
+.pause-icon {
+    font-size: 20px;
+    color: purple;
+    display: none; /* Initially hide all pause icons */
+    margin-left: -0.5em;
+}
+
+/* Display play icon for the first button initially */
+#playPauseButton1 .play-icon {
+    display: block;
+}
+
+
+
+
+  
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 2em;
+    justify-content: space-around;
+    padding: 0;
+}
+
+section:nth-of-type(2) img {
+    display: block;
+    width: 15em;
+    /* margin: 0 auto; */
+    margin-left: 2em;
+    margin-top: 8em;
+}
+
+video {
+    display: block;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0;
+    background-color: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(105, 29, 105, 0.5);
+    padding: 0.5em 0;
+    margin-top: -20em;
+    color: white;
+    flex-shrink: 0;
+}
