@@ -12,36 +12,45 @@
 <body>
 
     <header>
-        <h1>Rainbow Rango</h1>
+            <h1 id="rainbow-title">Rainbow Rango</h1>
         <!-- Other meta tags and title -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!-- Other stylesheets and scripts -->
     </header>
 
+    <div id="loading-screen">
+        <!-- Animation or video placeholder -->
+        <video id="loading-video" autoplay muted loop preload="auto">
+            <source src="videos/loader.mp4" type="video/mp4">
+        </video>
+        <div id="countdown">15</div>
+    </div>
+
 <section>
     <ul>
-        <li><button id="playPauseButton1">Play/Pause Video 1</button></li>
-        <li><button id="playPauseButton2">Play/Pause Video 2</button></li>
-        <li><button id="playPauseButton3">Play/Pause Video 3</button></li>
+        <li><button class="custombutton-active" id="playPauseButton1"><video id="icon1" loop>
+            <source src="videos/camoufleren-movingicon.mp4" type="video/mp4">
+        </video></button></li>
+        <li><button class="custombutton-active" id="playPauseButton2"><video id="icon2" loop>
+            <source src="videos/movingicon-klimmen.mp4" type="video/mp4">
+        </video></button></li>
+        <li><button class="custombutton-active" id="playPauseButton3"><video id="icon3" loop>
+            <source src="videos/eten-movingicon.mp4" type="video/mp4">
+        </video></button></li>
     </ul>
 </section>
-
-
 
     <section>
     
         <div class="animation-container">
             <video id="myVideo1" loop autoplay class="video-container">
-                <source src="videos/Kameleon-geometrisch-kleur.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="videos/KLEURIG.mp4" type="video/mp4">
             </video>
-            <video id="myVideo2" loop autoplay class="video-container">
-                <source src="videos/Kameleon-geometrisch_klimmen.mp4" type="video/mp4"> <!-- Replace with your video 2 source -->
-                Your browser does not support the video tag.
+            <video id="myVideo2" loop autoplay class="video-container" preload="auto">
+                <source src="videos/klimmen-hogeframerate-lageres.mp4" type="video/mp4"> <!-- Replace with your video 2 source -->
             </video>
             <video id="myVideo3" loop autoplay class="video-container">
                 <source src="videos/Kameleon-geometrisch-eten.mp4" type="video/mp4"> <!-- Replace with your video 3 source -->
-                Your browser does not support the video tag.
             </video>
         </div>
         
@@ -49,11 +58,7 @@
 
     <section>
         <audio id="audio1" autoplay loop>
-            <source src="audio/Regen beter.mp3" type="audio/mp3">
-        </audio>
-
-        <audio id="audio2" autoplay loop>
-            <source src="audio/Regen ondertoon.mp3" type="audio/mp3">
+            <source src="audio/rain-jungle.mp3" type="audio/mp3">
         </audio>
     </section>
 

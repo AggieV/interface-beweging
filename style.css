@@ -1,92 +1,124 @@
 body {
     background-color: rgb(8, 49, 8);
+    margin: 0;
+    overflow: hidden; /* Hide scroll bars during loading */
 }
 
-h1 {
+/* Import the custom font */
+@font-face {
+    font-family: 'Luckiest Guy';
+    src: url('fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf') format('truetype');
+}
+
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #02494d; /* Change to your desired background */
+    z-index: 9999; /* Ensure the loading screen is on top */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Fade-in/out transition */
+}
+
+#loading-video {
+    width: 20%;
+    height: auto;
+}
+
+#countdown {
+    font-size: 3em;
+    margin-top: 20px;
+    color: white;
+}
+
+/* h1 {
     color: white;
     text-align: center;
+} */
+
+header {
+    text-align: center;
+    margin-top: 50px;
 }
 
-button {
-    cursor: pointer;
-    border-radius: 50%;
-    /* aspect-ratio: 1/1; */
-    padding: 2em;
+#rainbow-title {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 48px;
+    display: inline-block;
+}
+
+
+
+/* Button styles */
+#playPauseButton1,
+#playPauseButton2,
+#playPauseButton3 {
+    padding: 3em 6em;
+    border-radius: 0.5em;
     width: 50%;
     height: 50%;
     border: none;
-    /* box-shadow: inset; */
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    transition: box-shadow 0.3s ease;
 }
 
-/* Style for play and pause icons */
-/* .fa-play,
-.fa-pause {
-    font-size: 20px;
-    color: purple; 
-    display: none; 
-    margin-left: -0.5em;
-} */
-
-/* Styling when the button is in the paused state */
-/* .paused .fa-play {
-    display: block;
+#playPauseButton1:hover,
+#playPauseButton2:hover,
+#playPauseButton3:hover {
+    box-shadow: 0 8px 20px rgba(144, 238, 144, 0.8);
 }
 
-.paused .fa-pause {
-    display: none;
-} */
-
-/* Add these lines to the CSS to initially hide the pause icon */
-/* #pauseIcon {
-    display: none;
-} */
-
-
-
-/* .play-icon {
-    font-size: 20px;
-    color: purple;
-    display: block; 
-    margin-left: -0.5em;
+#playPauseButton1:active,
+#playPauseButton2:active,
+#playPauseButton3:active {
+    transform: translateY(2px);
 }
 
-.pause-icon {
-    font-size: 20px;
-    color: purple;
-    display: none; 
-    margin-left: -0.5em;
-} */
-
-/* Your existing CSS styles */
-/* ... */
-
-.play-icon {
-    font-size: 20px;
-    color: purple;
-    display: none; /* Initially hide all play icons */
-    margin-left: -0.5em;
+/* Initially hide the border for .custombutton */
+/* Initially hide the border for .custombutton */
+.custombutton-active {
+    position: relative;
+    border: none; /* Initially no border */
+    outline: none; /* Remove default outline */
 }
 
-.pause-icon {
-    font-size: 20px;
-    color: purple;
-    display: none; /* Initially hide all pause icons */
-    margin-left: -0.5em;
-}
-
-/* Display play icon for the first button initially */
-#playPauseButton1 .play-icon {
-    display: block;
+.custombutton-active.active {
+    border: 2px solid lightgreen; /* Border style for the active button */
 }
 
 
+.custombutton-active video {
+    box-shadow: inset 0 0 10px 5px #006400; /* Dark green inset shadow */
+}
 
 
-  
+li>button>video {
+    width: 5em;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
 
 ul {
     display: flex;
@@ -100,7 +132,6 @@ ul {
 section:nth-of-type(2) img {
     display: block;
     width: 15em;
-    /* margin: 0 auto; */
     margin-left: 2em;
     margin-top: 8em;
 }
@@ -118,7 +149,7 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-    background-color: rgba(105, 29, 105, 0.5);
+    background-color: rgba(144, 238, 144, 0.2);
     padding: 0.5em 0;
     margin-top: -20em;
     color: white;
